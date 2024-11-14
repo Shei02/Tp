@@ -1,0 +1,33 @@
+<html>
+<head>
+  <title>Formularios</title>
+  </head>
+<body>
+
+<form action="ejemplo.php" method="get">
+<fieldset>
+<legend> Datos Personales </legend>
+<p> Nombre:     <input type="text" name="nombre" size="15"> </p>
+<p> Contraseña: <input type="password" name="password" minlength="6"> </p>
+<p> Envienos un archivo:   <input type="file"> </p>
+<p> Mayor de 18 años:  <input type="checkbox" name="casilla"> </p>
+<input type="radio" name="boton" value="1"> Hombre
+<input type="radio" name="boton" value="1"> Mujer
+<br>
+<select name="menu">
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+  <option>4</option>
+</select>
+<p> Comentario: <br>
+<input type="text" name="texto">
+</p>
+</fieldset>
+<p>
+    <input type="submit" value="Enviar">
+    <input type="reset" value="Reestablecer">
+  </p>
+</form>
+</body>
+</html>

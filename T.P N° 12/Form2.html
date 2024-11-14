@@ -1,0 +1,37 @@
+<html>
+<head>
+  <title>Formularios</title>
+  </head>
+<body>
+
+<form action="Procesaalojamiento.php" method="post">
+<fieldset>
+<legend> ¡Publica ahora tu alojamiento
+y empieza a recibir reservas! </legend> 
+    <p> Nombre:  <input type="text" name="nombre" size="15"> </p>
+    <p> Apellidos:  <input type="text" name="apellidos" size="40"> </p>
+    <p> E-mail: <input type="email" name="correo" size="40"> </p>
+    <p> Telefono de contacto: </p>
+    <select name="menu">  
+    <option value="0">...</option>
+    <option value="1">España - 0034</option>     
+    <option value="2">Argentina - 0119</option>   
+    <option value="3">Mexico - 4567</option>      
+    </select> 
+    <input type="text" name="texto">
+    <p> ¿Donde se encuentra tu alojamiento? </p>
+    <select name="menu">  
+    <option value="0">...</option>
+    <option value="1">España</option> 
+    <option value="2">Argentina</option>   
+    <option value="3">Mexico</option>  
+    </select>
+    <input type="text" name="texto">
+<br>
+<p> <input type="checkbox" name="casilla"> Acepto los Terminos y condicioes y la 
+politica de de proteccion de datos </p>
+<p> <input type="submit" value="Podemos empezar"> </p>
+</fieldset>
+</form>
+</body>
+</html>

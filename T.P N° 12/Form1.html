@@ -1,0 +1,27 @@
+<html>
+<head>
+  <title> Formularios </title>
+  </head>
+<body>
+<form action="Procesainscripcion.php" method="post">
+<fieldset>
+<legend> Formulario de inscripción </legend> 
+    <p> Nombre de usuario: <input type="text" name="nombre" size="15"> </p>
+    <p> Contraseña: <input type="password" name="password"> </p>
+    <p> Dirección e-mail: <input type="email" name="correo"  placeholder="user@gmail.com"> </p>
+    <p> <input type="checkbox" name="casilla"> Envíame un email de confirmación</p>
+    <input type="radio" name="boton" value="1"> Suscribirme a la newsletter y a las promociones <br>
+    <input type="radio" name="boton" value="2"> Suscribirme sólo a la newsletter <br>
+    <input type="radio" name="boton" value="3"> No deseo suscribirme
+    <p> Nacionalidad:</p> 
+	<select name="menu">
+    <option value="0">...</option>
+    <option value="1">Español</option>
+    <option value="2">Irlandes</option>
+    <option value="3">Mexicano</option>
+    </select>
+    <p> <input type="submit" value="Submit"> <input type="button" value="Cancel"> </p> 
+	</fieldset>
+	</form>
+</body>
+</html>

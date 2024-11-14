@@ -1,0 +1,41 @@
+   .cursivanegrita{
+  text-decoration: underline;  
+  font-style: oblique;
+  font-weight: bold;
+  }
+  
+  .resaltado{
+  background-color:#ffff00;
+  font-color:#EB7302;
+  }
+
+  .clase1{
+   font-family:courier;
+   text-align:center;
+   color:#34495E;
+   background-color:#AEB6BF;
+   font-size:x-large;
+   letter-spacing:30
+   }
+   
+   .clase2{
+    border-width:medium;
+	border-style:solid;
+   }
+   
+   .clase3{
+	font-size:x-large;
+	letter-spacing:9;
+	border-style:dotted;
+	font-family:Georgia;
+   }
+   
+   .clase4{
+	text-decoration:underline; 
+	font-style:oblique;
+	font-weight:bold;
+   }
+ 
+   .clase5{
+    font-family:Tahoma;
+	}	   

@@ -1,0 +1,35 @@
+<html>
+<head>
+  <title>Formularios</title>
+  </head>
+<body>
+
+<form action="ejemplo.php" method="get">
+<fieldset>
+<legend> Formulario </legend>
+<p> Tipo de documento<br>
+<select name="menu">
+  <option value="0">...</option>
+  <option value="1">Cédula</option>
+  <option value="2">DNI</option>
+  <option value="3">Carnet</option>
+</select>
+</p>
+<p> Nombres:<br>
+<input type="text" name="nombre" placeholder="Nombre de usuario" size="15"> </p>
+<p> Apellidos: <br>
+<input type="text" name="apellidos" size="40"> </p>
+<p> Genero: <br>
+<input type="radio" name="boton" value="1">Masculino<br>
+<input type="radio" name="boton" value="2" checked>Femenino
+</p>
+<p> Descripción: <br> 
+<textarea name="texto" rows="3" cols="30"> </textarea>
+</p>
+
+<input type="reset" value="Cargar Información">
+</fieldset>
+</form>
+</body>
+</html>
+
