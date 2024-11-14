@@ -1,0 +1,2 @@
+Juan,Perez,20,21/7/1999,San Martín 20,2314609876,true,true
+Roberto,Castillo,55,1/5/1980,Sarmiento 890,2314453245,false,true
