@@ -1,0 +1,43 @@
+<DERExt>
+ <Entity name="GRUPO" y="-130" width="45" x="180" subtype="0" isAssociative="0">
+  <Simple cant3="2" name="id" cant2="0" pk="1" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+ </Entity>
+ <Entity name="CUIDADOR" y="-83" width="60" x="-587" subtype="0" isAssociative="0">
+  <Simple cant3="2" name="id" cant2="0" pk="1" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  <Simple cant3="2" name="nombre" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+ </Entity>
+ <Entity name="TURNO" y="54" width="45" x="-576" subtype="0" isAssociative="0">
+  <Simple cant3="2" name="horainic" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  <Simple cant3="2" name="horasalida" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+ </Entity>
+ <Entity name="TURNOCOMIDA" y="277" width="75" x="-478" subtype="0" isAssociative="0">
+  <Simple cant3="2" name="hora" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+ </Entity>
+ <Entity name="ANIMAL" y="-81" width="50" x="-45" subtype="0" isAssociative="0">
+  <Simple cant3="2" name="id" cant2="0" pk="1" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  <Simple cant3="2" name="nombre" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+ </Entity>
+ <Entity name="ALIMENTO" y="184" width="60" x="-261" subtype="0" isAssociative="0">
+  <Simple cant3="2" name="id" cant2="0" pk="1" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  <Simple cant3="2" name="nombre" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  <Simple cant3="2" name="cant" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  <Simple cant3="2" name="hora" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+ </Entity>
+ <Entity name="ZONA" y="109" width="40" x="-39" subtype="0" isAssociative="0">
+  <Simple cant3="2" name="id" cant2="0" pk="1" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+ </Entity>
+ <Entity name="MA?" y="150" width="35" x="-659" subtype="1" isAssociative="0"/>
+ <Entity name="TARD" y="151" width="40" x="-567" subtype="1" isAssociative="0"/>
+ <Entity name="NOCHE" y="151" width="45" x="-476" subtype="1" isAssociative="0"/>
+ <Entity name="MA?ANA" y="403" width="50" x="-610" subtype="1" isAssociative="0"/>
+ <Entity name="TARDE" y="409" width="45" x="-464" subtype="1" isAssociative="0"/>
+ <Entity name="NOOC" y="409" width="40" x="-302" subtype="1" isAssociative="0"/>
+ <RBinary onDelete0="restrict" dep="0" y="-85.5" max1="1" name="tiene" onUpdate0="restrict" max0="N" width="40" name0="ANIMAL" name1="GRUPO" onUpdate1="restrict" min1="1" x="91" onDelete1="restrict" min0="1" match1="simple" firstWeak="0" rolename="" match0="simple"/>
+ <Hierarchy centerY="null" total="false" cont="4" name="Hierarchy TURNO" name0="TURNO" name3="MA?" exclusive="true" typeName="" name2="TARD" centerX="null" name1="NOCHE"/>
+ <Hierarchy centerY="357" total="false" cont="4" name="Hierarchy TURNOCOMIDA" name0="TURNOCOMIDA" name3="MA?ANA" exclusive="false" typeName=" " name2="TARDE" centerX="-441" name1="NOOC"/>
+ <RBinary onDelete0="restrict" dep="0" y="3" max1="1" name="trabaja" onUpdate0="restrict" max0="N" width="40" name0="CUIDADOR" name1="TURNO" onUpdate1="restrict" min1="1" x="-554" onDelete1="restrict" min0="1" match1="simple" firstWeak="0" rolename="" match0="simple"/>
+ <RBinary onDelete0="restrict" dep="0" y="-60" max1="N" name="cuida" onUpdate0="restrict" max0="N" width="40" name0="CUIDADOR" name1="ANIMAL" onUpdate1="restrict" min1="1" x="-290" onDelete1="restrict" min0="1" match1="simple" firstWeak="0" rolename="" match0="simple"/>
+ <RBinary onDelete0="restrict" dep="0" y="38" max1="1" name="vive" onUpdate0="restrict" max0="N" width="40" name0="ANIMAL" name1="ZONA" onUpdate1="restrict" min1="1" x="-19" onDelete1="restrict" min0="1" match1="simple" firstWeak="0" rolename="" match0="simple"/>
+ <RBinary onDelete0="restrict" dep="0" y="59" max1="N" name="come" onUpdate0="restrict" max0="N" width="40" name0="ANIMAL" name1="ALIMENTO" onUpdate1="restrict" min1="1" x="-131" onDelete1="restrict" min0="1" match1="simple" firstWeak="0" rolename="" match0="simple"/>
+ <RBinary onDelete0="restrict" dep="0" y="247" max1="3" name="da" onUpdate0="restrict" max0="N" width="40" name0="ALIMENTO" name1="TURNOCOMIDA" onUpdate1="restrict" min1="1" x="-326" onDelete1="restrict" min0="1" match1="simple" firstWeak="0" rolename="" match0="simple"/>
+</DERExt>

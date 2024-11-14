@@ -1,0 +1,30 @@
+<DERExt>
+ <Entity y="308" subtype="0" width="40" x="-41" name="LOTE" isAssociative="0">
+  <Simple null="0" pk="1" parent="" sk="0" cant2="0" optionSQL="1" mult="0" name="id" type="integer" cant1="20" cant3="2"/>
+  <Simple null="0" pk="0" parent="" sk="0" cant2="0" optionSQL="1" mult="0" name="seguimiento" type="integer" cant1="20" cant3="2"/>
+  <Simple null="0" pk="0" parent="" sk="0" cant2="0" optionSQL="1" mult="0" name="epoca" type="integer" cant1="20" cant3="2"/>
+ </Entity>
+ <Entity y="145" subtype="0" width="55" x="-50" name="CULTIVO" isAssociative="0">
+  <Simple null="0" pk="1" parent="" sk="0" cant2="0" optionSQL="1" mult="0" name="id" type="integer" cant1="20" cant3="2"/>
+  <Simple null="0" pk="0" parent="" sk="0" cant2="0" optionSQL="1" mult="0" name="nombre" type="integer" cant1="20" cant3="2"/>
+ </Entity>
+ <Entity y="129" subtype="0" width="45" x="-468" name="DROGA" isAssociative="0">
+  <Simple null="0" pk="1" parent="" sk="0" cant2="0" optionSQL="1" mult="0" name="id" type="integer" cant1="20" cant3="2"/>
+  <Simple null="0" pk="0" parent="" sk="0" cant2="0" optionSQL="1" mult="0" name="nombre" type="integer" cant1="20" cant3="2"/>
+  <Simple null="0" pk="0" parent="" sk="0" cant2="0" optionSQL="1" mult="0" name="cant" type="integer" cant1="20" cant3="2"/>
+ </Entity>
+ <Entity y="-26" subtype="0" width="70" x="22" name="ENFERMEDAD" isAssociative="0">
+  <Simple null="0" pk="1" parent="" sk="0" cant2="0" optionSQL="1" mult="0" name="id" type="integer" cant1="20" cant3="2"/>
+  <Simple null="0" pk="0" parent="" sk="0" cant2="0" optionSQL="1" mult="0" name="nombre" type="integer" cant1="20" cant3="2"/>
+  <Simple null="0" pk="0" parent="" sk="0" cant2="0" optionSQL="1" mult="0" name="estrategia" type="integer" cant1="20" cant3="2"/>
+  <Simple null="0" pk="0" parent="" sk="0" cant2="0" optionSQL="1" mult="0" name="dosis" type="integer" cant1="20" cant3="2"/>
+ </Entity>
+ <Entity y="-32" subtype="0" width="75" x="-483" name="AGROQUIMICO" isAssociative="0">
+  <Simple null="0" pk="1" parent="" sk="0" cant2="0" optionSQL="1" mult="0" name="lab" type="integer" cant1="20" cant3="2"/>
+  <Simple null="0" pk="0" parent="" sk="0" cant2="0" optionSQL="1" mult="0" name="nombre" type="integer" cant1="20" cant3="2"/>
+ </Entity>
+ <RBinary max0="N" width="40" onDelete1="restrict" rolename="" match0="simple" name="tiene" dep="0" name1="LOTE" x="-22" onUpdate1="restrict" onDelete0="restrict" min1="1" firstWeak="0" y="241" name0="CULTIVO" match1="simple" min0="1" onUpdate0="restrict" max1="N"/>
+ <RBinary max0="N" width="65" onDelete1="restrict" rolename="" match0="simple" name="recomendado" dep="0" name1="CULTIVO" x="-234.5" onUpdate1="restrict" onDelete0="restrict" min1="1" firstWeak="0" y="76.5" name0="AGROQUIMICO" match1="simple" min0="1" onUpdate0="restrict" max1="N"/>
+ <RBinary max0="N" width="40" onDelete1="restrict" rolename="" match0="simple" name="previene" dep="0" name1="ENFERMEDAD" x="-194.5" onUpdate1="restrict" onDelete0="restrict" min1="1" firstWeak="0" y="-9" name0="AGROQUIMICO" match1="simple" min0="1" onUpdate0="restrict" max1="N"/>
+ <RBinary max0="N" width="55" onDelete1="restrict" rolename="" match0="simple" name="compuesto" dep="0" name1="DROGA" x="-446" onUpdate1="restrict" onDelete0="restrict" min1="1" firstWeak="0" y="68.5" name0="AGROQUIMICO" match1="simple" min0="1" onUpdate0="restrict" max1="N"/>
+</DERExt>

@@ -1,0 +1,34 @@
+<DERExt>
+ <Entity width="80" subtype="0" isAssociative="0" y="-93" name="ESPECIALIDAD" x="-393">
+  <Compound amount="2" sk="0" parent="" mult="0" pk="1" null="0" name="id_especialidad" optionSQL="1">
+   <Simple sk="0" type="integer" cant3="2" parent="id_especialidad" mult="0" cant2="0" pk="0" null="0" name="tipo_especialidad" optionSQL="1" cant1="20"/>
+   <Simple sk="0" type="integer" cant3="2" parent="id_especialidad" mult="0" cant2="0" pk="0" null="0" name="cod_especialiadad" optionSQL="1" cant1="20"/>
+  </Compound>
+ </Entity>
+ <Entity width="60" subtype="0" isAssociative="0" y="198" name="PACIENTE" x="-403">
+  <Simple sk="0" type="integer" cant3="2" parent="" mult="0" cant2="0" pk="1" null="0" name="id_paciente" optionSQL="1" cant1="20"/>
+  <Simple sk="0" type="integer" cant3="2" parent="" mult="0" cant2="0" pk="0" null="0" name="nombre" optionSQL="1" cant1="20"/>
+  <Simple sk="0" type="integer" cant3="2" parent="" mult="0" cant2="0" pk="0" null="0" name="apellido" optionSQL="1" cant1="20"/>
+  <Simple sk="0" type="integer" cant3="2" parent="" mult="0" cant2="0" pk="0" null="0" name="cel_contacto" optionSQL="1" cant1="20"/>
+ </Entity>
+ <Entity width="50" subtype="0" isAssociative="0" y="23" name="MEDICO" x="51">
+  <Simple sk="0" type="integer" cant3="2" parent="" mult="0" cant2="0" pk="1" null="0" name="nro_matricula" optionSQL="1" cant1="20"/>
+  <Simple sk="0" type="integer" cant3="2" parent="" mult="0" cant2="0" pk="0" null="0" name="nombre" optionSQL="1" cant1="20"/>
+  <Simple sk="0" type="integer" cant3="2" parent="" mult="0" cant2="0" pk="0" null="0" name="apellido" optionSQL="1" cant1="20"/>
+  <Simple sk="0" type="integer" cant3="2" parent="" mult="0" cant2="0" pk="0" null="0" name="e_mail" optionSQL="1" cant1="20"/>
+  <Simple sk="0" type="integer" cant3="2" parent="" mult="0" cant2="0" pk="0" null="0" name="fecha_nac" optionSQL="1" cant1="20"/>
+ </Entity>
+ <Entity width="80" subtype="0" isAssociative="0" y="216" name="CENTRO_SALUD" x="40">
+  <Simple sk="0" type="integer" cant3="2" parent="" mult="0" cant2="0" pk="1" null="0" name="cod_centro" optionSQL="1" cant1="20"/>
+  <Simple sk="0" type="integer" cant3="2" parent="" mult="0" cant2="0" pk="0" null="0" name="nombre" optionSQL="1" cant1="20"/>
+  <Simple sk="0" type="integer" cant3="2" parent="" mult="0" cant2="0" pk="0" null="0" name="calle" optionSQL="1" cant1="20"/>
+  <Simple sk="0" type="integer" cant3="2" parent="" mult="0" cant2="0" pk="0" null="0" name="nro" optionSQL="1" cant1="20"/>
+  <Simple sk="0" type="integer" cant3="2" parent="" mult="0" cant2="0" pk="0" null="0" name="sala_atencion" optionSQL="1" cant1="20"/>
+ </Entity>
+ <Entity width="411" subtype="0" isAssociative="1" y="-7" name="a" associationRel="atiende" x="30">
+  <Simple sk="0" type="integer" cant3="2" parent="" mult="0" cant2="0" pk="1" null="0" name="atiende.nro_matricula,atiende.cod_centro" optionSQL="1" cant1="20"/>
+ </Entity>
+ <RBinary max1="N" name1="a" min1="1" onUpdate1="restrict" onDelete0="restrict" name0="PACIENTE" min0="1" onDelete1="restrict" rolename="" max0="N" match0="simple" dep="0" onUpdate0="restrict" x="-170" firstWeak="0" match1="simple" y="167" width="40" name="asiste"/>
+ <RBinary max1="N" name1="MEDICO" min1="0" onUpdate1="restrict" onDelete0="restrict" name0="ESPECIALIDAD" min0="1" onDelete1="restrict" rolename="" max0="N" match0="simple" dep="0" onUpdate0="restrict" x="-352" firstWeak="0" match1="simple" y="40" width="40" name="posee"/>
+ <RBinary max1="N" name1="CENTRO_SALUD" min1="0" onUpdate1="restrict" onDelete0="restrict" name0="MEDICO" min0="0" onDelete1="restrict" rolename="" max0="N" match0="simple" dep="0" onUpdate0="restrict" x="78" firstWeak="0" match1="simple" y="139.5" width="40" name="atiende"/>
+</DERExt>

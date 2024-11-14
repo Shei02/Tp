@@ -1,0 +1,46 @@
+<DERExt>
+ <Entity name="DELEGACION MUNICIPAL" y="142" width="120" x="-525" strongEnt="MUNICIPIO" weak="1">
+  <Simple cant3="2" name="iddelegacion" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  <Simple cant3="2" name="direccion" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  <Simple cant3="2" name="telefono" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="1"/>
+ </Entity>
+ <Entity name="OBRA" y="-195" width="40" x="-367" subtype="0" isAssociative="0">
+  <Simple cant3="2" name="id_obra" cant2="0" pk="1" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  <Simple cant3="2" name="m2" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  <Simple cant3="2" name="dir_obra" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  <Simple cant3="2" name="anioinicio" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+ </Entity>
+ <Entity name="NUEVA" y="-19" width="45" x="-457" subtype="1" isAssociative="0"/>
+ <Entity name="VIEJA" y="-22" width="45" x="-314" subtype="1" isAssociative="0"/>
+ <Entity name="PERSONA" y="-75" width="55" x="518" subtype="0" isAssociative="0">
+  <Simple cant3="2" name="dni" cant2="0" pk="1" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  <Simple cant3="2" name="nombre" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  <Simple cant3="2" name="apellido" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  <Simple cant3="2" name="direccion" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  <Simple cant3="2" name="telefono" cant2="0" pk="0" parent="" type="integer" null="1" optionSQL="1" cant1="20" sk="0" mult="1"/>
+ </Entity>
+ <Entity name="CONSTRUCTOR" y="-191" width="75" x="59" subtype="1" isAssociative="0">
+  <Simple cant3="2" name="matricula" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+ </Entity>
+ <Entity name="ALBAÑIL" y="-119" width="55" x="71" subtype="1" isAssociative="0"/>
+ <Entity name="AGRIMENSOR" y="-53" width="70" x="66" subtype="1" isAssociative="0"/>
+ <Entity name="ARQUITECTO" y="14" width="70" x="67" subtype="1" isAssociative="0"/>
+ <Entity name="PERIODO" y="77" width="55" x="308" subtype="0" isAssociative="0">
+  <Simple cant3="2" name="fechainic" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  <Simple cant3="2" name="fechafin" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+ </Entity>
+ <Entity name="MUNICIPIO" y="289" width="65" x="-258" subtype="0" isAssociative="0">
+  <Simple cant3="2" name="cp" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  <Simple cant3="2" name="dir" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  <Simple cant3="2" name="tel" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+ </Entity>
+ <RBinary onDelete0="restrict" dep="0" y="-52" max1="1" name="inscripta en" onUpdate0="restrict" max0="N" width="70" name0="OBRA" name1="DELEGACION MUNICIPAL" onUpdate1="restrict" min1="1" x="-572" onDelete1="restrict" min0="0" match1="simple" firstWeak="0" rolename="" match0="simple"/>
+ <RBinary onDelete0="restrict" dep="1" y="274" max1="N" name="pertenece" onUpdate0="restrict" max0="1" width="55" name0="MUNICIPIO" name1="DELEGACION MUNICIPAL" onUpdate1="restrict" min1="1" x="-415" onDelete1="restrict" min0="1" match1="simple" firstWeak="0" rolename="" match0="simple"/>
+ <Hierarchy centerY="null" total="false" cont="3" name="Hierarchy OBRA" name0="OBRA" exclusive="true" typeName="ES" name2="NUEVA" centerX="null" name1="VIEJA"/>
+ <RBinary onDelete0="restrict" dep="0" y="-173" max1="1" name="ejecutada" onUpdate0="restrict" max0="N" width="55" name0="OBRA" name1="CONSTRUCTOR" onUpdate1="restrict" min1="1" x="-125.5" onDelete1="restrict" min0="0" match1="simple" firstWeak="0" rolename="" match0="simple"/>
+ <Hierarchy centerY="null" total="false" cont="5" name4="CONSTRUCTOR" name="Hierarchy PERSONA" name0="PERSONA" name3="ALBAÑIL" exclusive="true" typeName="actuvidad" name2="AGRIMENSOR" centerX="null" name1="ARQUITECTO"/>
+ <RBinary onDelete0="restrict" dep="0" y="-119" max1="N" name="participa" onUpdate0="restrict" max0="N" width="55" name0="OBRA" name1="ALBAÑIL" onUpdate1="restrict" min1="1" x="-124" onDelete1="restrict" min0="0" match1="simple" firstWeak="0" rolename="" match0="simple"/>
+ <RBinary onDelete0="restrict" dep="0" y="67" max1="1" name="interviene" onUpdate0="restrict" max0="N" width="60" name0="NUEVA" name1="AGRIMENSOR" onUpdate1="restrict" min1="1" x="-182" onDelete1="restrict" min0="1" match1="simple" firstWeak="0" rolename="" match0="simple"/>
+ <RBinary onDelete0="restrict" dep="0" y="142" max1="1" name="resonsable" onUpdate0="restrict" max0="N" width="60" name0="NUEVA" name1="ARQUITECTO" onUpdate1="restrict" min1="1" x="-208" onDelete1="restrict" min0="1" match1="simple" firstWeak="0" rolename="" match0="simple"/>
+ <RBinary onDelete0="restrict" dep="0" y="14" max1="N" name="trabaja" onUpdate0="restrict" max0="N" width="40" name0="ALBAÑIL" name1="PERIODO" onUpdate1="restrict" min1="1" x="234" onDelete1="restrict" min0="1" match1="simple" firstWeak="0" rolename="" match0="simple"/>
+</DERExt>

@@ -1,0 +1,51 @@
+<DERExt>
+ <Entity name="CARRERA" y="55" width="55" x="314" subtype="0" isAssociative="0">
+  <Simple cant3="2" name="num_carrera" cant2="0" pk="1" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  <Simple cant3="2" name="nombre" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+ </Entity>
+ <Entity name="HIPODROMO" y="189" width="65" x="-2" subtype="0" isAssociative="0">
+  <Simple cant3="2" name="id_hipodromo" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  <Simple cant3="2" name="nombre" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  <Simple cant3="2" name="fecha_creacion" cant2="0" pk="0" parent="" type="integer" null="1" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  <Simple cant3="2" name="tel" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="1"/>
+ </Entity>
+ <Entity name="ORGANIZADOR" y="53" width="75" x="-264" subtype="0" isAssociative="0">
+  <Simple cant3="2" name="id_org" cant2="0" pk="1" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  <Simple cant3="2" name="nombre_org" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+ </Entity>
+ <Entity name="STUD" y="119" width="40" x="-619" subtype="0" isAssociative="0">
+  <Simple cant3="2" name="nro_stud" cant2="0" pk="1" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  <Simple cant3="2" name="nombre_stud" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  <Compound name="direccion" pk="0" parent="" null="0" optionSQL="1" sk="0" mult="0" amount="4">
+   <Simple cant3="2" name="calle" cant2="0" pk="0" parent="direccion" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+   <Simple cant3="2" name="puerta" cant2="0" pk="0" parent="direccion" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+   <Simple cant3="2" name="piso" cant2="0" pk="0" parent="direccion" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+   <Simple cant3="2" name="localidad" cant2="0" pk="0" parent="direccion" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  </Compound>
+  <Simple cant3="2" name="dueño" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="1"/>
+ </Entity>
+ <Entity name="JINETE" y="-152" width="50" x="3" subtype="0" isAssociative="0">
+  <Simple cant3="2" name="nro_certificado" cant2="0" pk="1" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  <Simple cant3="2" name="apellido" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  <Simple cant3="2" name="nombre" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  <Compound name="dni" pk="0" parent="" null="0" optionSQL="1" sk="0" mult="0" amount="2">
+   <Simple cant3="2" name="tipo" cant2="0" pk="0" parent="dni" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+   <Simple cant3="2" name="nro" cant2="0" pk="0" parent="dni" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  </Compound>
+  <Simple cant3="2" name="altura" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  <Simple cant3="2" name="peso" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+ </Entity>
+ <Entity name="CABALLO" y="-152" width="55" x="-614" subtype="0" isAssociative="0">
+  <Simple cant3="2" name="idcaballo" cant2="0" pk="1" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  <Simple cant3="2" name="nombre" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  <Simple cant3="2" name="pelaje" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  <Simple cant3="2" name="peso" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  <Simple cant3="2" name="fecha_nac" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  <Simple cant3="2" name="altura" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+ </Entity>
+ <RTernary onDelete0="restrict" y="-14" max1="N" name="participa2" onUpdate0="restrict" max0="N" name2="JINETE" width="60" min2="1" name0="CABALLO" name1="CARRERA" onUpdate1="restrict" min1="1" match2="simple" x="-73" onDelete2="restrict" onDelete1="restrict" max2="N" onUpdate2="restrict" min0="1" match1="simple" match0="simple"/>
+ <RBinary onDelete0="restrict" dep="0" y="136" max1="N" name="participa" onUpdate0="restrict" max0="N" width="55" name0="STUD" name1="CARRERA" onUpdate1="restrict" min1="1" x="-95" onDelete1="restrict" min0="1" match1="simple" firstWeak="0" rolename="" match0="simple"/>
+ <RBinary onDelete0="restrict" dep="0" y="72" max1="N" name="oganiza" onUpdate0="restrict" max0="1" width="40" name0="ORGANIZADOR" name1="CARRERA" onUpdate1="restrict" min1="1" x="64" onDelete1="restrict" min0="1" match1="simple" firstWeak="0" rolename="" match0="simple"/>
+ <RBinary onDelete0="restrict" dep="0" y="-132" max1="1" name="entrena" onUpdate0="restrict" max0="N" width="40" name0="CABALLO" name1="JINETE" onUpdate1="restrict" min1="1" x="-279.5" onDelete1="restrict" min0="1" match1="simple" firstWeak="0" rolename="" match0="simple"/>
+ <RBinary onDelete0="restrict" dep="0" y="12" max1="1" name="pertenece" onUpdate0="restrict" max0="N" width="55" name0="CABALLO" name1="STUD" onUpdate1="restrict" min1="1" x="-652" onDelete1="restrict" min0="1" match1="simple" firstWeak="0" rolename="" match0="simple"/>
+</DERExt>

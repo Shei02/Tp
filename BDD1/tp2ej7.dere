@@ -1,0 +1,27 @@
+<DERExt>
+ <Entity subtype="1" isAssociative="0" x="-330" width="55" y="-15" name="USUARIO">
+  <Simple pk="0" cant2="0" parent="" null="0" mult="0" cant1="20" cant3="2" name="e_mail" type="integer" sk="1" optionSQL="1"/>
+  <Simple pk="0" cant2="0" parent="" null="0" mult="0" cant1="20" cant3="2" name="nro_tel" type="integer" sk="1" optionSQL="1"/>
+  <Simple pk="0" cant2="0" parent="" null="0" mult="0" cant1="20" cant3="2" name="nombre" type="integer" sk="0" optionSQL="1"/>
+ </Entity>
+ <Entity subtype="1" isAssociative="0" x="-483" width="45" y="-11" name="GRUPO"/>
+ <Entity subtype="0" isAssociative="0" x="9" width="55" y="-10" name="MENSAJE">
+  <Simple pk="1" cant2="0" parent="" null="0" mult="0" cant1="20" cant3="2" name="id_msj" type="integer" sk="0" optionSQL="1"/>
+  <Simple pk="0" cant2="0" parent="" null="0" mult="0" cant1="20" cant3="2" name="texto" type="integer" sk="0" optionSQL="1"/>
+  <Compound amount="2" pk="0" parent="" null="0" mult="0" name="enviado" sk="0" optionSQL="1">
+   <Simple pk="0" cant2="0" parent="enviado" null="0" mult="0" cant1="20" cant3="2" name="fecha" type="integer" sk="0" optionSQL="1"/>
+   <Simple pk="0" cant2="0" parent="enviado" null="0" mult="0" cant1="20" cant3="2" name="hora" type="integer" sk="0" optionSQL="1"/>
+  </Compound>
+ </Entity>
+ <Entity subtype="0" isAssociative="0" x="-427" width="80" y="-172" name="DESTINATARIO">
+  <Simple pk="1" cant2="0" parent="" null="0" mult="0" cant1="20" cant3="2" name="id_destinatario" type="integer" sk="0" optionSQL="1"/>
+  <Simple pk="0" cant2="0" parent="" null="0" mult="0" cant1="20" cant3="2" name="nickname" type="integer" sk="0" optionSQL="1"/>
+  <Simple pk="0" cant2="0" parent="" null="1" mult="0" cant1="20" cant3="2" name="info" type="integer" sk="0" optionSQL="1"/>
+  <Simple pk="0" cant2="0" parent="" null="1" mult="0" cant1="20" cant3="2" name="foto" type="integer" sk="0" optionSQL="1"/>
+ </Entity>
+ <RUnary min1="0" onDelete0="restrict" x="110" width="40" max1="N" match1="simple" name1="MENSAJE" min0="0" onDelete1="restrict" max0="1" y="-55" name="es_rta" onUpdate0="restrict" name0="MENSAJE" rolename="" onUpdate1="restrict" match0="simple"/>
+ <RBinary rolename="" min1="0" match1="simple" max0="N" onDelete0="restrict" firstWeak="0" dep="0" min0="1" max1="N" x="-39" onUpdate0="restrict" y="-150" name0="DESTINATARIO" match0="simple" onDelete1="restrict" onUpdate1="restrict" width="55" name="enviado_a" name1="MENSAJE"/>
+ <RBinary rolename="" min1="0" match1="simple" max0="1" onDelete0="restrict" firstWeak="0" dep="0" min0="1" max1="N" x="-133.5" onUpdate0="restrict" y="7.5" name0="USUARIO" match0="simple" onDelete1="restrict" onUpdate1="restrict" width="40" name="es_autor" name1="MENSAJE"/>
+ <RBinary rolename="" min1="1" match1="simple" max0="N" onDelete0="restrict" firstWeak="0" dep="0" min0="0" max1="N" x="-378" onUpdate0="restrict" y="155" name0="GRUPO" match0="simple" onDelete1="restrict" onUpdate1="restrict" width="40" name="tiene" name1="USUARIO"/>
+ <Hierarchy cont="3" exclusive="true" total="false" centerY="-67" typeName="es" name2="GRUPO" name1="USUARIO" name="Hierarchy DESTINATARIO" name0="DESTINATARIO" centerX="-386"/>
+</DERExt>

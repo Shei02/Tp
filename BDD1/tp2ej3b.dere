@@ -1,0 +1,33 @@
+<DERExt>
+ <Entity name="LIBRE" y="226" width="45" x="-2" subtype="1" isAssociative="0"/>
+ <Entity name="OCUPADO" y="226" width="55" x="-149" subtype="1" isAssociative="0"/>
+ <Entity name="AULAEXC" y="318" width="55" x="-349" strongEnt="EXCLUSIVA" weak="1"/>
+ <Entity name="AULACOMUN" y="318" width="65" x="-539" strongEnt="COMUN" weak="1"/>
+ <Entity name="FACULTAD" y="-198" width="60" x="-435" subtype="0" isAssociative="0">
+  <Simple cant3="2" name="id" cant2="0" pk="1" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  <Simple cant3="2" name="nombre" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  <Simple cant3="2" name="decano" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  <Simple cant3="2" name="vicedecano" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+ </Entity>
+ <Entity name="CARRERA" y="-199" width="55" x="3" subtype="0" isAssociative="0">
+  <Simple cant3="2" name="id" cant2="0" pk="1" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  <Simple cant3="2" name="nombre" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+ </Entity>
+ <Entity name="PABELLON" y="13" width="60" x="-428" subtype="0" isAssociative="0">
+  <Simple cant3="2" name="numid" cant2="0" pk="1" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  <Simple cant3="2" name="nombre" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  <Simple cant3="2" name="ubicacion" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+ </Entity>
+ <Entity name="SEMESTRE" y="113" width="60" x="-80" subtype="0" isAssociative="0">
+  <Simple cant3="2" name="numsemestre" cant2="0" pk="1" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+ </Entity>
+ <Entity name="COMUN" y="142" width="45" x="-531" subtype="1" isAssociative="0"/>
+ <Entity name="EXCLUSIVA" y="148" width="65" x="-356" subtype="1" isAssociative="0"/>
+ <RTernary onDelete0="restrict" y="-20" max1="N" name="reserva" onUpdate0="restrict" max0="1" name2="AULACOMUN" width="40" min2="0" name0="FACULTAD" name1="SEMESTRE" onUpdate1="restrict" min1="0" match2="simple" x="-97" onDelete2="restrict" onDelete1="restrict" max2="N" onUpdate2="restrict" min0="0" match1="simple" match0="simple"/>
+ <Hierarchy centerY="null" total="false" cont="3" name="Hierarchy SEMESTRE" name0="SEMESTRE" exclusive="true" typeName="ES" name2="OCUPADO" centerX="null" name1="LIBRE"/>
+ <RBinary onDelete0="restrict" dep="0" y="23" max1="N" name="poseee" onUpdate0="restrict" max0="N" width="40" name0="FACULTAD" name1="EXCLUSIVA" onUpdate1="restrict" min1="1" x="-1518" onDelete1="restrict" min0="1" match1="simple" firstWeak="0" rolename="" match0="simple"/>
+ <RBinary onDelete0="restrict" dep="0" y="-178.5" max1="N" name="posee" onUpdate0="restrict" max0="1" width="40" name0="FACULTAD" name1="CARRERA" onUpdate1="restrict" min1="1" x="-187.5" onDelete1="restrict" min0="1" match1="simple" firstWeak="0" rolename="" match0="simple"/>
+ <RBinary onDelete0="restrict" dep="1" y="253" max1="N" name="tienee" onUpdate0="restrict" max0="1" width="40" name0="EXCLUSIVA" name1="AULAEXC" onUpdate1="restrict" min1="1" x="-323" onDelete1="restrict" min0="1" match1="simple" firstWeak="0" rolename="" match0="simple"/>
+ <RBinary onDelete0="restrict" dep="1" y="247" max1="N" name="tiene" onUpdate0="restrict" max0="1" width="40" name0="COMUN" name1="AULACOMUN" onUpdate1="restrict" min1="1" x="-508" onDelete1="restrict" min0="1" match1="simple" firstWeak="0" rolename="" match0="simple"/>
+ <Hierarchy centerY="null" total="false" cont="3" name="Hierarchy PABELLON" name0="PABELLON" exclusive="true" typeName="ES" name2="COMUN" centerX="null" name1="EXCLUSIVA"/>
+</DERExt>

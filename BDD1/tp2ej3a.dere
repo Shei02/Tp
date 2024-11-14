@@ -1,0 +1,35 @@
+<DERExt>
+ <Entity name="SEMESTRE" y="116" width="60" x="-187" subtype="0" isAssociative="0">
+  <Simple cant3="2" name="id" cant2="0" pk="1" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  <Simple cant3="2" name="anio" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+ </Entity>
+ <Entity name="PROFESOR" y="-193" width="60" x="-491" subtype="0" isAssociative="0">
+  <Simple cant3="2" name="id" cant2="0" pk="1" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  <Simple cant3="2" name="nombre" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+ </Entity>
+ <Entity name="INVESTIGACION" y="-7" width="85" x="-504" subtype="0" isAssociative="0">
+  <Simple cant3="2" name="id" cant2="0" pk="1" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  <Simple cant3="2" name="titulo" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+ </Entity>
+ <Entity name="ESTUDIANTE" y="174" width="70" x="-494" subtype="0" isAssociative="0">
+  <Simple cant3="2" name="lu" cant2="0" pk="1" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  <Simple cant3="2" name="nombre" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  <Simple cant3="2" name="apellido" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+ </Entity>
+ <Entity name="CURSO" y="-189" width="45" x="0" subtype="0" isAssociative="0">
+  <Simple cant3="2" name="ID" cant2="0" pk="1" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  <Simple cant3="2" name="nombre" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  <Simple cant3="2" name="duracion" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+ </Entity>
+ <Entity name="MATERIA" y="82" width="55" x="-3" subtype="0" isAssociative="0">
+  <Simple cant3="2" name="id" cant2="0" pk="1" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+  <Simple cant3="2" name="nombre" cant2="0" pk="0" parent="" type="integer" null="0" optionSQL="1" cant1="20" sk="0" mult="0"/>
+ </Entity>
+ <RBinary onDelete0="restrict" dep="0" y="-16.5" max1="1" name="dado" onUpdate0="restrict" max0="N" width="40" name0="CURSO" name1="SEMESTRE" onUpdate1="restrict" min1="1" x="-67.5" onDelete1="restrict" min0="0" match1="simple" firstWeak="0" rolename="" match0="simple"/>
+ <RBinary onDelete0="restrict" dep="0" y="-33.5" max1="N" name="puede tener" onUpdate0="restrict" max0="N" width="65" name0="CURSO" name1="MATERIA" onUpdate1="restrict" min1="1" x="23" onDelete1="restrict" min0="0" match1="simple" firstWeak="0" rolename="" match0="simple"/>
+ <RUnary min0="0" onUpdate1="restrict" name="correlativa" max1="N" name0="MATERIA" onDelete0="restrict" rolename="" min1="0" match0="simple" onDelete1="restrict" y="47" width="65" x="220" max0="2" name1="MATERIA" onUpdate0="restrict" match1="simple"/>
+ <RBinary onDelete0="restrict" dep="0" y="12.5" max1="N" name="tiene" onUpdate0="restrict" max0="N" width="40" name0="ESTUDIANTE" name1="CURSO" onUpdate1="restrict" min1="1" x="-218.5" onDelete1="restrict" min0="0" match1="simple" firstWeak="0" rolename="" match0="simple"/>
+ <RBinary onDelete0="restrict" dep="0" y="-80" max1="N" name="dirige" onUpdate0="restrict" max0="1" width="40" name0="PROFESOR" name1="INVESTIGACION" onUpdate1="restrict" min1="1" x="-461.5" onDelete1="restrict" min0="1" match1="simple" firstWeak="0" rolename="" match0="simple"/>
+ <RBinary onDelete0="restrict" dep="0" y="79.5" max1="N" name="realiza" onUpdate0="restrict" max0="1" width="40" name0="INVESTIGACION" name1="ESTUDIANTE" onUpdate1="restrict" min1="1" x="-460.5" onDelete1="restrict" min0="1" match1="simple" firstWeak="0" rolename="" match0="simple"/>
+ <RBinary onDelete0="restrict" dep="0" y="-171" max1="N" name="dicta" onUpdate0="restrict" max0="1" width="40" name0="PROFESOR" name1="CURSO" onUpdate1="restrict" min1="1" x="-219.5" onDelete1="restrict" min0="1" match1="simple" firstWeak="0" rolename="" match0="simple"/>
+</DERExt>
