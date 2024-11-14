@@ -1,0 +1,49 @@
+version: "3.1"
+
+intents:
+  - saludo
+  - ver
+  - despedida
+  - funcionalidad
+
+entities:
+    - nombre
+
+
+slots:
+  nombre: 
+    type: text
+    mappings:
+      - type: from_entity
+        entity: nombre
+  nombre_recom:
+    type: text
+    mappings: []
+
+     
+
+
+responses:
+  utter_saludo:
+  - text: "Hola {nombre}! ¿En que puedo ayudarte?"
+  - text: "Ey, ¿que puedo recomendarte?"
+  - text: "Saludos, ¿que tenes ganas de ver?"
+  - text: "Hola {nombre}, ¿que te apetece mirar hoy?"
+  - text: "¿{nombre} que quieres mirar hoy?"
+  - text: "¿{nombre} que te apetece?"
+
+  utter_despedida:
+  - text: "Nos vemos, espero haberte ayudado {nombre}!"
+  - text: "Adios, que disfrutes lo que veas {nombre} :D"
+  - text: "Espero haber sido de tu ayuda"
+  - text: "Nos vemos luego, disfruta!"
+
+  utter_iamabot:
+  - text: "Mi funcionalidad es recomendarte peliculas en base a tus preferencias :D"
+
+actions:
+  - action_retorna_peli
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
